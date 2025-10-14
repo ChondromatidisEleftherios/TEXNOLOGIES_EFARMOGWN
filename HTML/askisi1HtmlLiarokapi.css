@@ -1,0 +1,44 @@
+.content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+}
+
+.field {
+	background-color: violet;
+	color: white;
+	font-weight: bold;
+	border: 3px solid yellow;
+}
+
+.field:focus {
+	background-color: purple;
+}
+
+.btn {
+	border-radius: 5px;
+}
+.btn:hover {
+	background-color: darkgray;
+	cursor: pointer;
+}
+
+.studentTable,
+td,
+th {
+	border: 2px solid black;
+	text-align: center;
+}
+
+.headers {
+	color: green;
+}
+
+.oddRow {
+	background-color: purple; /*Το άσπρο δε θα φαινόταν καθόλου*/
+}
+
+.evenRow {
+	background-color: cyan;
+}

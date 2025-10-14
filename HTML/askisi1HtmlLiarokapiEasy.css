@@ -1,0 +1,23 @@
+.studentTable,
+td,
+th {
+	border: 2px solid black;
+	text-align: center;
+}
+
+.field {
+	color: black;
+	color: white;
+}
+
+.headers {
+	color: green;
+}
+
+.oddRow {
+	background-color: purple; /*Το άσπρο δε θα φαινόταν καθόλου*/
+}
+
+.evenRow {
+	background-color: cyan;
+}

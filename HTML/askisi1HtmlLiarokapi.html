@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Askisi 1 - HTML</title>
+		<link rel="stylesheet" href="askisi1HtmlLiarokapi.css" />
+	</head>
+	<body>
+		<div class="content">
+			<form action="students.html" method="get">
+				<label for="am"> AM: </label>
+				<input type="text" name="am" class="field" />
+				<br />
+				<label for="lastName"> Επώνυμο: </label>
+				<input type="text" name="lastName" class="field" />
+				<br />
+				<label for="semester"> Εξάμηνο Σπουδών: </label>
+				<select name="semester">
+					<option name="semester1">1ο εξάμηνο</option>
+					<option name="semester2">2ο εξάμηνο</option>
+					<option name="semester3">3ο εξάμηνο</option>
+					<option name="semester4">4ο εξάμηνο</option>
+					<option name="semester5">5ο εξάμηνο</option>
+					<option name="semester6">6ο εξάμηνο</option>
+					<option name="semester7" selected>7ο εξάμηνο</option>
+					<option name="semester8">8ο εξάμηνο</option>
+					<option name="semester9">9ο εξάμηνο</option>
+					<option name="semester10">10ο εξάμηνο</option>
+				</select>
+				<br />
+				<input type="submit" class="btn" name="submit" value="submit" />
+			</form>
+			<br />
+			<table class="studentTable">
+				<tr>
+					<th class="headers">Αριθμὸς Μητρώου</th>
+					<th class="headers">Όνομα</th>
+					<th class="headers">Εξάμηνο</th>
+					<th class="headers">E-mail</th>
+				</tr>
+				<tr class="oddRow">
+					<td>2874</td>
+					<td>Λευτέρης</td>
+					<td>7ο</td>
+					<td>2874@uoi.gr</td>
+				</tr>
+				<tr class="evenRow">
+					<td>2758</td>
+					<td>Λευτέρης</td>
+					<td>7ο</td>
+					<td>2758@uoi.gr</td>
+				</tr>
+				<tr class="oddRow">
+					<td>2771</td>
+					<td>Γεώργιος</td>
+					<td>7ο</td>
+					<td>2771@uoi.gr</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
