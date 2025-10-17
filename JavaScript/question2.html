@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<body>
+		<button id="myBtn">Try it</button>
+		<p id="demo"></p>
+		<script>
+			const button =
+				document.querySelector(
+					"#myBtn",
+				); /*Λαμβάνεται το στοιχείο #myBtn από το HTML*/
+			button.onclick =
+				displayDate; /*Κάθε φορά που πατιέται το κουμπάκι, γίνεται κλήση της displayDate */
+
+			function displayDate() {
+				document.getElementById("demo").innerHTML = Date();
+			}
+		</script>
+	</body>
+</html>
