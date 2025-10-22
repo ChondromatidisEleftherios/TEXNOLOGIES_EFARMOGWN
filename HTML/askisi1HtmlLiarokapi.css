@@ -19,6 +19,7 @@
 .btn {
 	border-radius: 5px;
 }
+
 .btn:hover {
 	background-color: darkgray;
 	cursor: pointer;
