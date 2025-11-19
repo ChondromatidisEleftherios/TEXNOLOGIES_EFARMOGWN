@@ -9,6 +9,7 @@ import jakarta.servlet.http.*;
  *  text as with the HelloWorld servlet.
  */
 
+
 @WebServlet("/mytableform")
 public class Mytableform extends HttpServlet {
   @Override
@@ -18,6 +19,10 @@ public class Mytableform extends HttpServlet {
     response.setContentType("text/html");
     response.setCharacterEncoding("UTF-8");
     PrintWriter out = response.getWriter();
+    String rowParam="";
+    String columnParam="";
+    int rowParamToInt=-1;
+    int columnParamToInt=-1;
     out.println
       ("<!DOCTYPE html>\n" +
        "<html> \n" +
@@ -25,22 +30,25 @@ public class Mytableform extends HttpServlet {
        "<body bgcolor=\"#fdf5e6\"> \n" +
        "<h1> A Table generating example! </h1>" + 
        "<form> \n" +
-       "<p>Row Count: <input type=\"number\" name=\"rowCount\" value=\"\"> </p>\n" +
-       "<p>Column Count: <input type=\"number\" name=\"columnCount\" value=\"\"> </p>\n" +
+       "<p>Row Count: <input type=\"text\" name=\"rowCount\" value=\"" + rowParam + "\"> </p>\n" +
+       "<p>Column Count: <input type=\"text\" name=\"columnCount\" value=\"\"> </p>\n" +
        "<input type=\"submit\" name=\"makeTable\" value=\"Make Table\"> <br>" +
        "</form> \n");
-    String rowParam;
-    String columnParam;
-    int rowParamToInt;
-    int columnParamToInt;
+    boolean flag=true;
     rowParam = request.getParameter("rowCount");
     columnParam = request.getParameter("columnCount");
     if (!rowParam.trim().equals("") && !columnParam.trim().equals("") && !columnParam.trim().equals("0")) {
+    	try {
     rowParamToInt = Integer.parseInt(rowParam);
     columnParamToInt = Integer.parseInt(columnParam);
+    	}
+    	catch(NumberFormatException e) {
+         out.print("<p> ERROR!!! DO NOT PUT TEXT! ONLY NUMBERS!!! </p> \n");
+         flag=false;
+    	}
+    	if (flag!=false) {
     out.println("<table border = \"2\">");
     for (int row=0 ; row <= rowParamToInt ; row++) {
-    	out.print("<tr>");
     	for (int col=0 ; col < columnParamToInt ; col++) {
     		if (row==0) {
     			out.print("<th>" + " " + "Header" + " " +  Integer.toString(col+1) + "</th>");
@@ -54,8 +62,9 @@ public class Mytableform extends HttpServlet {
     }
     out.println("</table> </body> </html> \n");
   }
+    }
     else {
-    	out.println("<p> ERROR!!! No correct values inserted!!! </p> \n");
+    	out.println("<p> ERROR!!! DO NOT LEAVE TEHM NULL!!! </p> \n");
     }
   }
 }
