@@ -60,6 +60,7 @@
     	<p style ="color: #6042f5;"> <strong><u>ERROR!!! No valid values inserted!!! </u> </strong></p>
     <%}
     %>
+
 </form>
 </body>
 </html>
