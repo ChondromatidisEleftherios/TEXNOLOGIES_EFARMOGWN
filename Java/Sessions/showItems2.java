@@ -6,6 +6,12 @@ import jakarta.servlet.annotation.*;
 import jakarta.servlet.http.*;
 import java.util.*;
 
+/** Servlet that displays a list of items being ordered.
+ *  Accumulates them in an ArrayList with no attempt at
+ *  detecting repeated items. Used to demonstrate basic
+ *  session tracking. Updated to use generics.
+ */
+
 @WebServlet("/show-items2")
 public class ShowItems2 extends HttpServlet {
   @Override
@@ -51,8 +57,8 @@ public class ShowItems2 extends HttpServlet {
         }
         out.println("</UL>");
       }
-      out.println("<a href=\"order-form2.html\">" + "Back To Orders!" + "</a>");
-      out.println("<form action = \"show-items2\" method=\"post\"> <input type=\"submit\" value=\"Clear\" name=\"ClearPage\"> </form>");
+      out.println("<a href=\"order-form2.html\">" + "Back To Orders!" + "</a> <br><br>");
+      out.println("<form action = \"show-items2\" method=\"post\"> <input type=\"submit\" value=\"Clear\" name=\"ClearPage\"> </form> <br>");
       out.println("</BODY></HTML>");
     }
   }
